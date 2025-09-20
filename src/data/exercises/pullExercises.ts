@@ -4,13 +4,12 @@ export const pullExercises = [
     name: "Conventional Deadlift",
     equipment: "Barbell",
     muscles: [
-      { name: "Back", image: "/muscles/back.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
-      { name: "Forearms", image: "/muscles/forearms.png" },
+      { name: "Back", image: "/Exercises/Muscles/Back.jpg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
+      { name: "Forearms", image: "/Exercises/Muscles/Forearms.jpg" },
     ],
     media: {
-      image: "/exercises/deadlift.jpg",
-      video: "/exercises/deadlift.mp4",
+      images: ["/Exercises/Bulk/Deadlift_1.png", "/Exercises/Bulk/Deadlift_2.png" ],
     },
     steps: [
       "Stand with feet hip-width apart, bar over mid-foot.",
@@ -24,13 +23,15 @@ export const pullExercises = [
     name: "Pull-Ups",
     equipment: "Pull-Up Bar",
     muscles: [
-      { name: "Lats", image: "/muscles/lats.png" },
-      { name: "Biceps", image: "/muscles/biceps.png" },
-      { name: "Forearms", image: "/muscles/forearms.png" },
+      { name: "Lats", image: "/Exercises/Muscles/Lats.jpg" },
+      { name: "Biceps", image: "/Exercises/Muscles/Biceps.jpg" },
+      { name: "Forearms", image: "/Exercises/Muscles/Forearms.jpg" },
     ],
     media: {
-      image: "/exercises/pull-ups.jpg",
-      video: "/exercises/pull-ups.mp4",
+      images: [
+        "/Exercises/Bulk/Pull_Ups_1.png",
+        "/Exercises/Bulk/Pull_Ups_2.png",
+      ]
     },
     steps: [
       "Hang on a pull-up bar with overhand grip.",
@@ -43,12 +44,14 @@ export const pullExercises = [
     name: "Barbell Row",
     equipment: "Barbell",
     muscles: [
-      { name: "Back", image: "/muscles/back.png" },
-      { name: "Biceps", image: "/muscles/biceps.png" },
+      { name: "Back", image: "/Exercises/Muscles/Back.jpg" },
+      { name: "Biceps", image: "/Exercises/Muscles/Biceps.jpg" },
     ],
     media: {
-      image: "/exercises/barbell-row.jpg",
-      video: "/exercises/barbell-row.mp4",
+      images: [
+        "/Exercises/Pull/Barbell_Row_1.png",
+        "/Exercises/Pull/Barbell_Row_2.png",
+      ]
     },
     steps: [
       "Bend forward at hips with barbell in hands.",
@@ -61,13 +64,15 @@ export const pullExercises = [
     name: "Lat Pulldown",
     equipment: "Cable Machine",
     muscles: [
-      { name: "Lats", image: "/muscles/lats.png" },
-      { name: "Biceps", image: "/muscles/biceps.png" },
-      { name: "Rear Shoulders", image: "/muscles/shoulders-rear.png" },
+      { name: "Lats", image: "/Exercises/Muscles/Lats.jpg" },
+      { name: "Biceps", image: "/Exercises/Muscles/Biceps.jpg" },
+      { name: "Rear Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
     ],
     media: {
-      image: "/exercises/lat-pulldown.jpg",
-      video: "/exercises/lat-pulldown.mp4",
+      images: [
+        "/Exercises/Pull/Lat_Pulldown_1.jpg",
+        "/Exercises/Pull/Lat_Pulldown_2.jpg"
+      ]
     },
     steps: [
       "Sit on machine with thighs locked under pads.",
@@ -79,10 +84,9 @@ export const pullExercises = [
     id: "dumbbell-curl",
     name: "Dumbbell Bicep Curl",
     equipment: "Dumbbells",
-    muscles: [{ name: "Biceps", image: "/muscles/biceps.png" }],
+    muscles: [{ name: "Biceps", image: "/Exercises/Muscles/Biceps.jpg" }],
     media: {
-      image: "/exercises/dumbbell-curl.jpg",
-      video: "/exercises/dumbbell-curl.mp4",
+      images: ["Exercises/Pull/Dumbell_Curls_1.png", "Exercises/Pull/Dumbell_Curls_2.png"]
     },
     steps: [
       "Stand holding dumbbells at sides, palms forward.",
@@ -95,13 +99,15 @@ export const pullExercises = [
     name: "Face Pull",
     equipment: "Cable Machine",
     muscles: [
-      { name: "Rear Delts", image: "/muscles/shoulders-rear.png" },
-      { name: "Traps", image: "/muscles/traps.png" },
-      { name: "Biceps", image: "/muscles/biceps.png" },
+      { name: "Rear Delts", image: "/Exercises/Muscles/Shoulders.jpg" },
+      { name: "Traps", image: "/Exercises/Muscles/Traps.jpg" },
+      { name: "Biceps", image: "/Exercises/Muscles/Biceps.jpg" },
     ],
     media: {
-      image: "/exercises/face-pull.jpg",
-      video: "/exercises/face-pull.mp4",
+      images: [
+        "/Exercises/Pull/Face_Pull_1.png",
+        "/Exercises/Pull/Face_Pull_2.png"
+      ]
     },
     steps: [
       "Attach rope to high pulley and grab ends.",
@@ -114,32 +120,17 @@ export const pullExercises = [
     name: "Hammer Curl",
     equipment: "Dumbbells",
     muscles: [
-      { name: "Biceps (Brachialis)", image: "/muscles/biceps.png" },
-      { name: "Forearms", image: "/muscles/forearms.png" },
+      { name: "Biceps (Brachialis)", image: "/Exercises/Muscles/Biceps.jpg" },
+      { name: "Forearms", image: "/Exercises/Muscles/Forearms.jpg" },
     ],
     media: {
-      image: "/exercises/hammer-curl.jpg",
-      video: "/exercises/hammer-curl.mp4",
+      images:["/Exercises/Pull/Hammer_Curls_1.png",
+               "/Exercises/Pull/Hammer_Curls_2.png"]
     },
     steps: [
       "Hold dumbbells with palms facing inward.",
       "Curl weights while keeping neutral grip.",
       "Lower slowly to starting position.",
-    ],
-  },
-  {
-    id: "shrugs",
-    name: "Dumbbell Shrugs",
-    equipment: "Dumbbells",
-    muscles: [{ name: "Traps", image: "/muscles/traps.png" }],
-    media: {
-      image: "/exercises/shrugs.jpg",
-      video: "/exercises/shrugs.mp4",
-    },
-    steps: [
-      "Stand upright holding dumbbells at sides.",
-      "Shrug shoulders as high as possible.",
-      "Hold briefly, then lower.",
     ],
   },
 ];

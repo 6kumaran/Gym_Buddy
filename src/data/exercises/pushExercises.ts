@@ -4,13 +4,12 @@ export const pushExercises = [
     name: "Barbell Bench Press",
     equipment: "Barbell, Bench",
     muscles: [
-      { name: "Chest", image: "/muscles/chest.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
-      { name: "Shoulders", image: "/muscles/shoulders.png" },
+      { name: "Chest", image: "/Exercises/Muscles/Chest.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
+      { name: "Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
     ],
     media: {
-      image: "/exercises/bench-press.jpg",
-      video: "/exercises/bench-press.mp4",
+      images: ["/Exercises/Push/Barbell_Bench_Press_1.jpg", "/Exercises/Push/Barbell_Bench_Press_2.jpg"],
     },
     steps: [
       "Lie down on a flat bench with feet flat on the ground.",
@@ -24,13 +23,12 @@ export const pushExercises = [
     name: "Incline Dumbbell Press",
     equipment: "Dumbbells, Incline Bench",
     muscles: [
-      { name: "Upper Chest", image: "/muscles/chest-upper.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
-      { name: "Shoulders", image: "/muscles/shoulders.png" },
+      { name: "Upper Chest", image: "/Exercises/Muscles/Chest.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
+      { name: "Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
     ],
     media: {
-      image: "/exercises/incline-dumbbell-press.jpg",
-      video: "/exercises/incline-dumbbell-press.mp4",
+      images: ["/Exercises/Push/Incline_Dumbell_Press_1.png", "/Exercises/Push/Incline_Dumbell_Press_2.png"],
     },
     steps: [
       "Set bench to 30–45° incline.",
@@ -44,12 +42,11 @@ export const pushExercises = [
     name: "Overhead Shoulder Press",
     equipment: "Barbell or Dumbbells",
     muscles: [
-      { name: "Shoulders", image: "/muscles/shoulders.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
+      { name: "Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
     ],
     media: {
-      image: "/exercises/overhead-press.jpg",
-      video: "/exercises/overhead-press.mp4",
+      images: ["/Exercises/Push/Overhead_Press_1.jpg", "/Exercises/Push/Overhead_Press_2.jpg"],
     },
     steps: [
       "Stand upright holding bar/dumbbells at shoulder level.",
@@ -62,13 +59,12 @@ export const pushExercises = [
     name: "Push-Ups",
     equipment: "Bodyweight",
     muscles: [
-      { name: "Chest", image: "/muscles/chest.png" },
-      { name: "Shoulders", image: "/muscles/shoulders.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
+      { name: "Chest", image: "/Exercises/Muscles/Chest.jpg" },
+      { name: "Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
     ],
     media: {
-      image: "/exercises/push-ups.jpg",
-      video: "/exercises/push-ups.mp4",
+      images: ["/Exercises/Push/Push_Ups_1.png", "/Exercises/Push/Push_Ups_2.png"],
     },
     steps: [
       "Start in a high plank position.",
@@ -81,13 +77,15 @@ export const pushExercises = [
     name: "Chest Dips",
     equipment: "Parallel Bars",
     muscles: [
-      { name: "Chest", image: "/muscles/chest.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
-      { name: "Front Shoulders", image: "/muscles/shoulders.png" },
+      { name: "Chest", image: "/Exercises/Muscles/Chest.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
+      { name: "Front Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
     ],
     media: {
-      image: "/exercises/dips.jpg",
-      video: "/exercises/dips.mp4",
+      images: [
+        "/Exercises/Push/Chest_Dips_1.png",
+        "/Exercises/Push/Chest_Dips_2.png",
+      ]
     },
     steps: [
       "Hold yourself up on parallel bars.",
@@ -100,12 +98,11 @@ export const pushExercises = [
     name: "Arnold Press",
     equipment: "Dumbbells",
     muscles: [
-      { name: "Shoulders", image: "/muscles/shoulders.png" },
-      { name: "Triceps", image: "/muscles/triceps.png" },
+      { name: "Shoulders", image: "/Exercises/Muscles/Shoulders.jpg" },
+      { name: "Triceps", image: "/Exercises/Muscles/Triceps.jpg" },
     ],
     media: {
-      image: "/exercises/arnold-press.jpg",
-      video: "/exercises/arnold-press.mp4",
+      images: ["/Exercises/Push/Arnold_Press_1.png", "/Exercises/Push/Arnold_Press_2.png"],
     },
     steps: [
       "Hold dumbbells in front of shoulders, palms facing you.",
@@ -117,10 +114,9 @@ export const pushExercises = [
     id: "pec-deck",
     name: "Pec Deck Fly",
     equipment: "Pec Deck Machine",
-    muscles: [{ name: "Chest", image: "/muscles/chest.png" }],
+    muscles: [{ name: "Chest", image: "/Exercises/Muscles/Chest.jpg" }],
     media: {
-      image: "/exercises/pec-deck.jpg",
-      video: "/exercises/pec-deck.mp4",
+      images:["/Exercises/Push/Pec-Deck-Fly.png"]
     },
     steps: [
       "Sit on the pec deck machine with arms at 90°.",

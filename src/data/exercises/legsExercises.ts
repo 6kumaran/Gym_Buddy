@@ -4,13 +4,12 @@ export const legsExercises = [
     name: "Barbell Back Squat",
     equipment: "Barbell",
     muscles: [
-      { name: "Quads", image: "/muscles/quads.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
+      { name: "Quads", image: "/Exercises/Muscles/Quads.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
     ],
     media: {
-      image: "/exercises/squat.jpg",
-      video: "/exercises/squat.mp4",
+      images: ["/Exercises/Leg/Barbell_Squats_1.png", "/Exercises/Leg/Barbell_Squats_2.png"],
     },
     steps: [
       "Rack barbell on upper back, feet shoulder-width apart.",
@@ -23,13 +22,12 @@ export const legsExercises = [
     name: "Romanian Deadlift",
     equipment: "Barbell",
     muscles: [
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Lower Back", image: "/muscles/lower-back.png" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Lower Back", image: "/Exercises/Muscles/Back.jpg" },
     ],
     media: {
-      image: "/exercises/romanian-deadlift.jpg",
-      video: "/exercises/romanian-deadlift.mp4",
+      images: ["/Exercises/Leg/Romanian_Deadlift_1.png", "/Exercises/Leg/Romanian_Deadlift_2.png"],
     },
     steps: [
       "Stand with barbell at thighs.",
@@ -42,13 +40,12 @@ export const legsExercises = [
     name: "Leg Press",
     equipment: "Machine",
     muscles: [
-      { name: "Quads", image: "/muscles/quads.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
+      { name: "Quads", image: "/Exercises/Muscles/Quads.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
     ],
     media: {
-      image: "/exercises/leg-press.jpg",
-      video: "/exercises/leg-press.mp4",
+      images: ["/Exercises/Leg/Leg_Press_1.png", "/Exercises/Leg/Leg_Press_2.png"],
     },
     steps: [
       "Sit on machine with feet shoulder-width on platform.",
@@ -61,13 +58,12 @@ export const legsExercises = [
     name: "Walking Lunges",
     equipment: "Dumbbells (optional)",
     muscles: [
-      { name: "Quads", image: "/muscles/quads.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
+      { name: "Quads", image: "/Exercises/Muscles/Quads.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
     ],
     media: {
-      image: "/exercises/lunges.jpg",
-      video: "/exercises/lunges.mp4",
+      images: ["/Exercises/Leg/Walking_Lunges_1.png", "/Exercises/Leg/Walking_Lunges_2.png" , "/Exercises/Leg/Walking_Lunges_3.png", "/Exercises/Leg/Walking_Lunges_4.png"],
     },
     steps: [
       "Take a step forward, lowering back knee close to ground.",
@@ -79,10 +75,9 @@ export const legsExercises = [
     id: "calf-raise",
     name: "Standing Calf Raise",
     equipment: "Bodyweight / Machine",
-    muscles: [{ name: "Calves", image: "/muscles/calves.png" }],
+    muscles: [{ name: "Calves", image: "/Exercises/Muscles/Calves.jpg" }],
     media: {
-      image: "/exercises/calf-raise.jpg",
-      video: "/exercises/calf-raise.mp4",
+      images: ["/Exercises/Leg/Standing_Calf_Raises_1.png", "/Exercises/Leg/Standing_Calf_Raises_2.png"],
     },
     steps: [
       "Stand with feet flat on floor.",
@@ -95,12 +90,11 @@ export const legsExercises = [
     name: "Bulgarian Split Squat",
     equipment: "Dumbbells / Barbell",
     muscles: [
-      { name: "Quads", image: "/muscles/quads.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
+      { name: "Quads", image: "/Exercises/Muscles/Quads.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
     ],
     media: {
-      image: "/exercises/bulgarian-split-squat.jpg",
-      video: "/exercises/bulgarian-split-squat.mp4",
+      images: ["/Exercises/Leg/Bulgarian_Squats_1.png", "/Exercises/Leg/Bulgarian_Squats_2.png"],
     },
     steps: [
       "Place one foot behind on a bench.",
@@ -113,12 +107,11 @@ export const legsExercises = [
     name: "Barbell Hip Thrust",
     equipment: "Barbell",
     muscles: [
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
     ],
     media: {
-      image: "/exercises/hip-thrust.jpg",
-      video: "/exercises/hip-thrust.mp4",
+      images:["/Exercises/Leg/Barbell_Hip_Thrust_1.png", "/Exercises/Leg/Barbell_Hip_Thrust_2.png"],
     },
     steps: [
       "Sit with upper back on bench, barbell on hips.",
@@ -131,13 +124,12 @@ export const legsExercises = [
     name: "Step Ups",
     equipment: "Dumbbells (optional)",
     muscles: [
-      { name: "Quads", image: "/muscles/quads.png" },
-      { name: "Glutes", image: "/muscles/glutes.png" },
-      { name: "Hamstrings", image: "/muscles/hamstrings.png" },
+      { name: "Quads", image: "/Exercises/Muscles/Quads.jpg" },
+      { name: "Glutes", image: "/Exercises/Muscles/Glutes.jpeg" },
+      { name: "Hamstrings", image: "/Exercises/Muscles/Hamstrings.jpg" },
     ],
     media: {
-      image: "/exercises/step-up.jpg",
-      video: "/exercises/step-up.mp4",
+      images:["/Exercises/Leg/Step_Ups_1.png", "/Exercises/Leg/Step_Ups_2.png"],
     },
     steps: [
       "Step onto a bench or platform with one foot.",
