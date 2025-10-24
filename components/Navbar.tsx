@@ -49,6 +49,11 @@ export default function Navbar() {
                   ? "bg-blue-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Diet</li></Link>
+          <Link href="/diet/food-detector" onClick={() => setActiveTab("Macros")} className={`px-2 py-1 rounded-lg whitespace-nowrap transition ${
+                  activeTab === "Macros"
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-200"
+                }`}><li>Macros</li></Link>
           <Link href="/gallery" onClick={() => setActiveTab("Gallery")} className={`px-2 py-1 rounded-lg whitespace-nowrap transition ${
                 activeTab === "Gallery"
                   ? "bg-blue-600 text-white"
@@ -82,6 +87,7 @@ export default function Navbar() {
             <Link href="/exercise" onClick={() => setIsOpen(false)}><li>Exercise</li></Link>
             <Link href="/calculator" onClick={() => setIsOpen(false)}><li>Calculator</li></Link>
             <Link href="/diet" onClick={() => setIsOpen(false)}><li>Diet</li></Link>
+            <Link href="/diet/food-detector" onClick={() => setIsOpen(false)}><li>Macros</li></Link>
             <Link href="/gallery" onClick={() => setIsOpen(false)}><li>Gallery</li></Link>
             <Link href="/community" onClick={() => setIsOpen(false)}><li>Community</li></Link>
           </ul>

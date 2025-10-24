@@ -10,7 +10,7 @@ export default function DietPage() {
   return (
     <ProtectedRoute>
       <div className="p-6 space-y-10">
-        <h1 className="text-3xl font-bold text-center pt-15">Diet Plans</h1>
+        <h1 className="text-3xl font-bold text-center pt-15 text-white">Diet Plans</h1>
 
         {/* Responsive Tabs */}
         <div className="flex justify-center">
@@ -33,9 +33,9 @@ export default function DietPage() {
         </div>
 
         {/* Active Category Content */}
-        <div className="space-y-4">
+        <div className="space-y-4 text-white">
           <h2 className="text-2xl font-semibold">{activeCategory.title}</h2>
-          <p className="text-gray-600">{activeCategory.description}</p>
+          <p className="text-gray-400">{activeCategory.description}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {activeCategory.items.map((item) => (

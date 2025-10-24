@@ -66,8 +66,8 @@
     }
 
     return (
-      <main className="text-white" style={{ padding: 20 }}>
-        <h1>Food Detector (Gemini + OpenFoodFacts)</h1>
+      <main className="min-h-screen p-6 text-white text-center" style={{ padding: 20 }}>
+        <h1 className="text-2xl font-bold pt-20">Food Detector (Gemini + OpenFoodFacts)</h1>
 
         <div style={{ marginBottom: 10 }}>
           <label>
@@ -84,17 +84,17 @@
         </div>
 
         <div>
-          <input type="file" accept="image/*" onChange={handleFile} />
+          <input type="file" accept="image/*" className="px-4 py-2 rounded-xl bg-blue-600" onChange={handleFile} />
         </div>
 
-        {imageSrc && <img src={imageSrc} alt="preview" style={{ maxWidth: 320, marginTop: 12 }} />}
+        {imageSrc && <img src={imageSrc} alt="preview" className="text-center w-max m-auto py-4 justify-center display-block"/>}
 
-        {loading && <div style={{ marginTop: 12 }}>Processing image — please wait...</div>}
+        {loading && <div style={{ marginTop: 12 }} className="text-center">Processing image — please wait...</div>}
 
-        {message && <div style={{ marginTop: 12, color: "crimson" }}>{message}</div>}
+        {message && <div style={{ marginTop: 12, color: "crimson" }} className="text-center">{message}</div>}
 
         {food && (
-          <div style={{ marginTop: 16, border: "1px solid #ddd", padding: 12, maxWidth: 520 }}>
+          <div style={{ marginTop: 16, border: "1px solid #ddd" }} className="text-center w-max m-auto p-4 rounded-lg bg-gray-800">
             <div><strong>Detected:</strong> {food}</div>
 
             <div style={{ marginTop: 8 }}>

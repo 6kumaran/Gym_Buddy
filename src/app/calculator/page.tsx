@@ -15,8 +15,8 @@ export default function CalculatorPage() {
 
   return (
     <div className="min-h-screen p-6">
-      <h1 className="text-3xl font-bold pt-15 mb-6 text-center">
-        Fitness & Gym Calculators
+      <h1 className="text-3xl font-bold text-white pt-15 mb-6 text-center">
+        Fitness Calculators
       </h1>
 
       {/* Tabs */}
@@ -63,8 +63,8 @@ function BMICalculator() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">BMI Calculator</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl text-white font-semibold mb-2">BMI Calculator</h2>
+      <p className="text-gray-300 mb-4">
         Body Mass Index (BMI) estimates body fat using height and weight. A
         healthy range is usually 18.5 – 24.9.
       </p>
@@ -73,21 +73,21 @@ function BMICalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
 
       {bmi && (
-        <p className="mt-4 font-medium">
+        <p className="mt-4 font-medium text-white">
           Your BMI: {bmi}{" "}
           {Number(bmi) < 18.5
             ? "Underweight"
@@ -146,8 +146,8 @@ function CalorieBurnCalculator() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Calorie Burn Calculator</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl font-semibold mb-2 text-white">Calorie Burn Calculator</h2>
+      <p className="text-gray-300 mb-4">
         Select your exercise, enter your weight and duration, and we’ll calculate the calories burned.  
         Formula used: <b>Calories = MET × Weight (kg) × Duration (hours)</b>.
       </p>
@@ -156,19 +156,19 @@ function CalorieBurnCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Duration (minutes)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         />
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
@@ -182,7 +182,7 @@ function CalorieBurnCalculator() {
       </div>
 
       {calories && (
-        <p className="mt-4 font-medium">
+        <p className="mt-4 font-medium text-white">
           Calories Burned: {calories} kcal <br />
           Exercise: {exercise} (MET: {selectedMet})
         </p>
@@ -209,8 +209,8 @@ function OneRepMaxCalculator() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">One-Rep Max (1RM)</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl font-semibold mb-2 text-white">One-Rep Max (1RM)</h2>
+      <p className="text-gray-300 mb-4">
         1RM is the maximum weight you can lift for one repetition. This helps
         set training loads (e.g., 70% of 1RM for hypertrophy).
       </p>
@@ -219,21 +219,21 @@ function OneRepMaxCalculator() {
         <input
           type="number"
           placeholder="Weight lifted (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Reps performed"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={reps}
           onChange={(e) => setReps(e.target.value)}
         />
       </div>
 
       {oneRepMax && (
-        <p className="mt-4 font-medium">Estimated 1RM: {oneRepMax} kg</p>
+        <p className="mt-4 font-medium text-white">Estimated 1RM: {oneRepMax} kg</p>
       )}
 
       <p className="mt-4 text-sm text-gray-500">
@@ -263,8 +263,8 @@ const proteinMax = weight ? (Number(weight) * maxMultiplier).toFixed(1) : null;
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Protein Intake Calculator</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl font-semibold mb-2 text-white">Protein Intake Calculator</h2>
+      <p className="text-gray-300 mb-4">
         Protein is essential for muscle growth and repair. Recommended intake
         for active people is <b>1.6–2.2 g per kg</b> of body weight.
       </p>
@@ -273,12 +273,12 @@ const proteinMax = weight ? (Number(weight) * maxMultiplier).toFixed(1) : null;
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <select
-  className="w-full border p-2 rounded"
+  className="w-full border p-2 rounded text-white"
   value={activity}
   onChange={(e) => setActivity(e.target.value)}
 >
@@ -290,7 +290,7 @@ const proteinMax = weight ? (Number(weight) * maxMultiplier).toFixed(1) : null;
       </div>
 
       {proteinMin && proteinMax && (
-        <p className="mt-4 font-medium">
+        <p className="mt-4 font-medium text-white">
           Daily Protein: {proteinMin} – {proteinMax} g
         </p>
       )}
@@ -343,8 +343,8 @@ function MacroCalculator() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Macro Calculator</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl font-semibold mb-2 text-white">Macro Calculator</h2>
+      <p className="text-gray-300 mb-4">
         Enter your details to calculate daily calories and macronutrient needs
         based on your goal.
       </p>
@@ -353,27 +353,27 @@ function MacroCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Age (years)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
 
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -382,7 +382,7 @@ function MacroCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
         >
@@ -394,7 +394,7 @@ function MacroCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
         >
@@ -448,8 +448,8 @@ function CalorieCalculator() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Calorie Calculator</h2>
-      <p className="text-gray-600 mb-4">
+      <h2 className="text-xl font-semibold mb-2 text-white">Calorie Calculator</h2>
+      <p className="text-gray-300 mb-4">
         Calculates daily calories using{" "}
         <b>Mifflin-St Jeor equation</b>, adjusted for activity level.
       </p>
@@ -458,27 +458,27 @@ function CalorieCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Age (years)"
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
 
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -487,7 +487,7 @@ function CalorieCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded text-white"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
         >
@@ -500,7 +500,7 @@ function CalorieCalculator() {
       </div>
 
       {calories && (
-        <p className="mt-4 font-medium">
+        <p className="mt-4 font-medium text-white">
           Maintenance Calories: {calories} kcal/day
         </p>
       )}
