@@ -175,7 +175,7 @@ export default function ExercisePage() {
 
       {/* Exercises list */}
       <div className="space-y-12">
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}w
         {activeCategory.data.map((exercise: any) => (
           <ExerciseCard key={exercise.id} exercise={exercise as Exercise} />
         ))}

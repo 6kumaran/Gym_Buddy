@@ -440,9 +440,9 @@ export interface DietItem {
   image: string;
   nutrients: {
     calories: number;
-    protein: number;
-    carbs: number;
-    fat: number;
+    protein: string;
+    carbs: string;
+    fats: string;
   };
   ingredients: string[];
   recipe: string;
