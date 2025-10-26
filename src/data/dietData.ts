@@ -265,7 +265,7 @@ export const dietCategories = [
     {
       id: 1,
       name: "Oats Upma",
-      nutrients: { calories: 250, protein: 8, fat: 6, carbs: 45 },
+      nutrients: { calories: 250, protein: "8g", fats: "6g", carbs: "45g" },
       recipe: "Roast oats, sauté with veggies, add spices, and steam cook.",
       ingredients: ["Oats", "Carrots", "Beans", "Onion", "Green chilies", "Salt"],
       image: "/images/breakfast/Oats_Upma.jpg"
@@ -273,7 +273,7 @@ export const dietCategories = [
     {
       id: 2,
       name: "Paneer Paratha",
-      nutrients: { calories: 320, protein: 12, fat: 10, carbs: 50 },
+      nutrients: { calories: 320, protein: "12g", fats: "10g", carbs: "50g" },
       recipe: "Stuff whole wheat dough with spiced paneer and cook on tawa.",
       ingredients: ["Whole wheat flour", "Paneer", "Coriander", "Spices", "Ghee"],
       image: "/images/breakfast/Paneer-paratha.jpg"
@@ -281,7 +281,7 @@ export const dietCategories = [
     {
       id: 3,
       name: "Idli with Sambar",
-      nutrients: { calories: 280, protein: 9, fat: 4, carbs: 55 },
+      nutrients: { calories: 280, protein: "9g", fats: "4g", carbs: "55g" },
       recipe: "Steam fermented rice batter, serve with sambar and chutney.",
       ingredients: ["Rice", "Urad dal", "Vegetables", "Tamarind", "Spices"],
       image: "/images/breakfast/Idli_Sambar.jpg"
@@ -289,7 +289,7 @@ export const dietCategories = [
     {
       id: 4,
       name: "Boiled Eggs with Whole Wheat Toast",
-      nutrients: { calories: 210, protein: 13, fat: 8, carbs: 20 },
+      nutrients: { calories: 210, protein: "13g", fats: "8g", carbs: "20g" },
       recipe: "Boil eggs, slice toast, and serve with pepper and salt.",
       ingredients: ["Eggs", "Whole wheat bread", "Salt", "Pepper"],
       image: "/images/breakfast/Bread_with_Eggs.jpg"
@@ -297,7 +297,7 @@ export const dietCategories = [
     {
       id: 5,
       name: "Poha",
-      nutrients: { calories: 270, protein: 6, fat: 7, carbs: 45 },
+      nutrients: { calories: 270, protein: "6g", fats: "7g", carbs: "45g" },
       recipe: "Cook flattened rice with onions, peas, turmeric, and lemon.",
       ingredients: ["Poha", "Onion", "Peas", "Turmeric", "Lemon"],
       image: "/images/breakfast/Poha.jpg"
@@ -311,7 +311,7 @@ export const dietCategories = [
     {
       id: 1,
       name: "Brown Rice with Dal",
-      nutrients: { calories: 350, protein: 14, fat: 5, carbs: 65 },
+      nutrients: { calories: 350, protein: "14g", fats: "5g", carbs: "65g" },
       recipe: "Cook brown rice and serve with protein-rich dal.",
       ingredients: ["Brown rice", "Toor dal", "Tomato", "Onion", "Spices"],
       image: "/images/lunch/BlackRice_Dal.jpg"
@@ -319,7 +319,7 @@ export const dietCategories = [
     {
       id: 2,
       name: "Grilled Chicken with Roti",
-      nutrients: { calories: 400, protein: 30, fat: 10, carbs: 45 },
+      nutrients: { calories: 400, protein: "30g", fats: "10g", carbs: "45g" },
       recipe: "Grill chicken with spices and serve with whole wheat roti.",
       ingredients: ["Chicken breast", "Whole wheat flour", "Spices", "Coriander"],
       image: "/images/lunch/GrilledChicken_Roti.jpg"
@@ -327,7 +327,7 @@ export const dietCategories = [
     {
       id: 3,
       name: "Rajma Chawal",
-      nutrients: { calories: 420, protein: 16, fat: 9, carbs: 70 },
+      nutrients: { calories: 420, protein: "16g", fats: "9g", carbs: "70g" },
       recipe: "Cook rajma curry and serve with steamed rice.",
       ingredients: ["Kidney beans", "Rice", "Tomato", "Onion", "Spices"],
       image: "/images/lunch/Rajma-chawal.jpg"
@@ -335,7 +335,7 @@ export const dietCategories = [
     {
       id: 4,
       name: "Curd Rice",
-      nutrients: { calories: 300, protein: 8, fat: 6, carbs: 55 },
+      nutrients: { calories: 300, protein: "8g", fats: "6g", carbs: "55g" },
       recipe: "Mix cooked rice with curd, temper with curry leaves and mustard.",
       ingredients: ["Rice", "Curd", "Curry leaves", "Mustard seeds"],
       image: "/images/lunch/Curd_Rice.jpg"
@@ -343,7 +343,7 @@ export const dietCategories = [
     {
       id: 5,
       name: "Paneer Butter Masala with Roti",
-      nutrients: { calories: 450, protein: 18, fat: 20, carbs: 50 },
+      nutrients: { calories: 450, protein: "18g", fats: "20g", carbs: "50g" },
       recipe: "Cook paneer in tomato-butter gravy and serve with roti.",
       ingredients: ["Paneer", "Tomato", "Butter", "Spices", "Cream"],
       image: "/images/lunch/Paneer_butter_roti.JPG"
@@ -357,7 +357,7 @@ export const dietCategories = [
     {
       id: 1,
       name: "Grilled Fish with Veggies",
-      nutrients: { calories: 350, protein: 28, fat: 12, carbs: 25 },
+      nutrients: { calories: 350, protein: "28g", fats: "12g", carbs: "25g" },
       recipe: "Grill fish with herbs and serve with sautéed vegetables.",
       ingredients: ["Fish", "Bell peppers", "Broccoli", "Garlic", "Olive oil"],
       image: "/images/dinner/Grilled_Fish_Veggies.jpg"
@@ -365,7 +365,7 @@ export const dietCategories = [
     {
       id: 2,
       name: "Khichdi",
-      nutrients: { calories: 320, protein: 11, fat: 7, carbs: 55 },
+      nutrients: { calories: 320, protein: "11g", fats: "7g", carbs: "55g" },
       recipe: "Cook rice and dal with spices, tempered with ghee.",
       ingredients: ["Rice", "Moong dal", "Turmeric", "Ghee"],
       image: "/images/dinner/Khichdi.jpg"
@@ -373,7 +373,7 @@ export const dietCategories = [
     {
       id: 3,
       name: "Palak Paneer with Roti",
-      nutrients: { calories: 380, protein: 16, fat: 14, carbs: 45 },
+      nutrients: { calories: 380, protein: "16g", fats: "14g", carbs: "45g" },
       recipe: "Cook paneer with spinach puree and spices.",
       ingredients: ["Paneer", "Spinach", "Onion", "Garlic", "Spices"],
       image: "/images/dinner/palak_paneer.jpg"
@@ -381,7 +381,7 @@ export const dietCategories = [
     {
       id: 4,
       name: "Vegetable Soup with Bread",
-      nutrients: { calories: 250, protein: 6, fat: 5, carbs: 40 },
+      nutrients: { calories: 250, protein: "6g", fats: "5g", carbs: "40g" },
       recipe: "Boil vegetables with stock and serve with toasted bread.",
       ingredients: ["Carrots", "Beans", "Peas", "Vegetable stock", "Bread"],
       image: "/images/dinner/Vegetable_Soup.jpg"
@@ -395,7 +395,7 @@ export const dietCategories = [
     {
       id: 1,
       name: "Sprouts Salad",
-      nutrients: { calories: 180, protein: 12, fat: 2, carbs: 25 },
+      nutrients: { calories: 180, protein: "12g", fats: "2g", carbs: "25g" },
       recipe: "Mix sprouts with onion, tomato, lemon, and spices.",
       ingredients: ["Sprouts", "Onion", "Tomato", "Lemon", "Chili powder"],
       image: "/images/snack/Sprouts-salad.jpg"
@@ -403,7 +403,7 @@ export const dietCategories = [
     {
       id: 2,
       name: "Peanut Chikki",
-      nutrients: { calories: 210, protein: 6, fat: 10, carbs: 28 },
+      nutrients: { calories: 210, protein: "6g", fats: "10g", carbs: "28g" },
       recipe: "Melt jaggery, add roasted peanuts, and set into bars.",
       ingredients: ["Peanuts", "Jaggery", "Ghee"],
       image: "/images/snack/Peanut-chikki.jpg"
@@ -411,7 +411,7 @@ export const dietCategories = [
     {
       id: 3,
       name: "Fruit Bowl",
-      nutrients: { calories: 150, protein: 2, fat: 1, carbs: 35 },
+      nutrients: { calories: 150, protein: "2g", fats: "1g", carbs: "35g" },
       recipe: "Cut seasonal fruits and mix with a pinch of chaat masala.",
       ingredients: ["Apple", "Banana", "Papaya", "Orange", "Pomegranate"],
       image: "/images/snack/Fruit_Bowl.png"
@@ -419,7 +419,7 @@ export const dietCategories = [
     {
       id: 4,
       name: "Roasted Chana",
-      nutrients: { calories: 120, protein: 6, fat: 3, carbs: 20 },
+      nutrients: { calories: 120, protein: "6g", fats: "3g", carbs: "20g" },
       recipe: "Dry roast chana and season with salt and pepper.",
       ingredients: ["Chana", "Salt", "Pepper"],
       image: "/images/snack/Salted-chana.jpg"
@@ -427,7 +427,7 @@ export const dietCategories = [
     {
       id: 5,
       name: "Yogurt with Berries",
-      nutrients: { calories: 160, protein: 6, fat: 4, carbs: 28 },
+      nutrients: { calories: 160, protein: "6g", fats: "4g", carbs: "28g" },
       recipe: "Mix yogurt with fresh seasonal berries.",
       ingredients: ["Yogurt", "Blueberries", "Strawberries", "Honey"],
       image: "/images/snack/Yogurt_with_berries.jpg"
