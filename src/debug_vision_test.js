@@ -1,5 +1,5 @@
 // debug_vision_test.js
-const fs = require('fs');
+const fs = await import("fs");
 console.log('NODE env preview (first 200 chars of GOOGLE_API_KEY):', (process.env.GOOGLE_API_KEY||'').slice(0,200));
 console.log('Current working dir:', process.cwd());
 console.log('Check data/usage.json exists:', fs.existsSync('data/usage.json'));

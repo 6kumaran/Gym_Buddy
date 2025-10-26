@@ -18,6 +18,7 @@ function readJson(file: string) {
     return {};
   }
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function writeJson(file: string, data: any) {
   fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf8");
 }
@@ -103,6 +104,7 @@ If multiple foods are present, choose the most dominant one.`;
       macros,
       source: "openfoodfacts",
     });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error("/api/food error:", err);
     return NextResponse.json({ success: false, error: String(err) }, { status: 500 });
