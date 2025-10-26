@@ -22,7 +22,7 @@ export default function DietCard({ item }: { item: DietItem }) {
           <p>Calories: {item.nutrients.calories} kcal</p>
           <p>Protein: {item.nutrients.protein} g</p>
           <p>Carbs: {item.nutrients.carbs} g</p>
-          <p>Fat: {item.nutrients.fat} g</p>
+          <p>Fats: {item.nutrients.fats} g</p>
         </div>
 
         {/* Ingredients */}
