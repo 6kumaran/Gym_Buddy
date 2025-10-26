@@ -405,7 +405,7 @@ function MacroCalculator() {
       </div>
 
       {grams && (
-        <div className="mt-4">
+        <div className="mt-4 text-white">
           <p className="font-medium">Estimated Calories: {calories.toFixed(0)} kcal/day</p>
           <p className="font-medium mt-2">
             Macro Split → {macros.protein}% Protein, {macros.carbs}% Carbs, {macros.fats}% Fats
