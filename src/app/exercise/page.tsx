@@ -59,7 +59,7 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
     if (exercise.media?.image) return [exercise.media.image];
     return [];
   })();
-
+ 
   const [activeIndex, setActiveIndex] = useState(0);
 
   // reset index for new exercise
@@ -175,6 +175,7 @@ export default function ExercisePage() {
 
       {/* Exercises list */}
       <div className="space-y-12">
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         {activeCategory.data.map((exercise: any) => (
           <ExerciseCard key={exercise.id} exercise={exercise as Exercise} />
         ))}

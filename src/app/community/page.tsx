@@ -11,11 +11,13 @@ import {
 import ProtectedRoute from "../../../components/ProtectedRoute";
 
 export default function CommunityPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [posts, setPosts] = useState<any[]>([]);
   const [text, setText] = useState("");
   const [openComments, setOpenComments] = useState<{ [key: string]: boolean }>(
     {}
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [comments, setComments] = useState<{ [key: string]: any[] }>({});
   const [commentText, setCommentText] = useState<{ [key: string]: string }>({});
 
@@ -53,7 +55,7 @@ export default function CommunityPage() {
     setPosts(await listPosts()); // refresh counts
   }
 
-  return (
+  return ( 
     <ProtectedRoute>
       <div className="max-w-2xl mx-auto p-4 pt-30">
         {/* Post input */}

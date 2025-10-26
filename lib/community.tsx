@@ -6,7 +6,7 @@ async function requireUser() {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user) throw new Error("Not signed in");
   return data.user;
-}
+} 
 
 /* -------------------- POSTS -------------------- */
 
@@ -64,7 +64,7 @@ export async function listPosts(search?: string): Promise<ListedPost[]> {
 
   const { data, error } = await query;
   if (error) throw error;
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const posts = (data ?? []).map((p: any) => ({
     id: p.id,
     content: p.content,
@@ -171,7 +171,7 @@ export async function listComments(postId: string): Promise<ListedComment[]> {
     .order("created_at", { ascending: false });
 
   if (error) throw error;
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const comments = (data ?? []).map((c: any) => ({
     id: c.id,
     content: c.content,

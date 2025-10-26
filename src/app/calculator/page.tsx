@@ -247,6 +247,7 @@ function OneRepMaxCalculator() {
 function ProteinCalculator() {
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState("moderate");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const activityMultipliers: any = {
   sedentary: [1.2, 1.6],
   moderate: [1.6, 2.0],
@@ -312,6 +313,7 @@ function MacroCalculator() {
   const [goal, setGoal] = useState("maintain");
 
   // Macro split % based on goal
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const splits: any = {
     maintain: { protein: 30, carbs: 40, fats: 30 },
     cut: { protein: 40, carbs: 30, fats: 30 },
@@ -321,7 +323,7 @@ function MacroCalculator() {
   // Calculate BMR using Mifflin-St Jeor
   const calcBMR = () => {
     if (!weight || !height || !age) return 0;
-    let bmr =
+    const bmr =
       10 * parseFloat(weight) +
       6.25 * parseFloat(height) -
       5 * parseFloat(age) +

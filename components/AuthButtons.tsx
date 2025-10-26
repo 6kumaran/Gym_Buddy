@@ -1,12 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
-import { useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 
 
 export default function AuthDialog() {
-    const router = useRouter();
 
 
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +15,7 @@ export default function AuthDialog() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>(null);
   const [showAccount, setShowAccount] = useState(false);
 
@@ -86,11 +86,13 @@ export default function AuthDialog() {
             className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden"
           >
             {user.user_metadata?.avatar_url ? (
-              <img
-                src={user.user_metadata.avatar_url}
-                alt="Avatar"
-                className="w-full h-full object-cover cursor-pointer"
-              />
+              <Image
+  src={user.user_metadata.avatar_url}
+  alt="Avatar"
+  width={100}
+  height={100}
+  className="w-full h-full object-cover cursor-pointer"
+/>
             ) : (
               <span className="text-lg font-bold">
                 {user.email?.[0].toUpperCase()}
