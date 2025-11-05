@@ -1,6 +1,5 @@
 // data/exercises/homeBased.js
 
-import { image } from "framer-motion/client";
 
 export const homeBasedExercises = [
   {
