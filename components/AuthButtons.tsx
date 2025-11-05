@@ -75,7 +75,7 @@ export default function AuthDialog() {
       {!user ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="absolute top-4 right-6 bg-blue-500 text-white px-4 py-2 rounded"
+          className="absolute top-4 mt-3 right-6 bg-blue-500 text-white px-4 py-2 rounded"
         >
           Sign In
         </button>
@@ -83,7 +83,7 @@ export default function AuthDialog() {
         <div className="absolute top-4 right-6">
           <button
             onClick={() => setShowAccount(!showAccount)}
-            className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden"
+            className="w-10 h-10 rounded-full mt-3 bg-gray-300 flex items-center justify-center overflow-hidden"
           >
             {user.user_metadata?.avatar_url ? (
               <Image
@@ -127,8 +127,8 @@ export default function AuthDialog() {
       )}
 
       {isOpen && !user && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-8 w-[400px] relative shadow-lg">
+        <div className="fixed inset-0 backdrop-blur-md bg-black/30 flex items-center justify-center z-50 transition-all duration-300">
+          <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 w-[400px] relative shadow-2xl border border-white/30">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-2 right-3 text-gray-500 text-lg"

@@ -1,6 +1,7 @@
   // src/app/diet/food-detector/page.tsx
   "use client";
   import React, { useState } from "react";
+import ProtectedRoute from "../../../../components/ProtectedRoute";
 
   type Macros = { kcal: number; protein: number; carbs: number; fat: number } | null;
 
@@ -66,6 +67,7 @@
     }
 
     return (
+      <ProtectedRoute>
       <main className="min-h-screen p-6 text-white text-center" style={{ padding: 20 }}>
         <h1 className="text-2xl font-bold pt-20">Food Detector (Gemini + OpenFoodFacts)</h1>
 
@@ -120,5 +122,6 @@
           </div>
         )}
       </main>
+      </ProtectedRoute>
     );
   }

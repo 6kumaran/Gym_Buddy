@@ -12,7 +12,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
       const { data, error } = await supabase.auth.getSession();
 
       if (error || !data.session) {
-        router.push("/login");
+        router.push("/signup");
       } else {
         setLoading(false);
       }
