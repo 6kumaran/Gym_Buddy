@@ -69,7 +69,7 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
     Array.isArray(exercise.equipment) ? exercise.equipment.join(", ") : exercise.equipment ?? "None";
 
   return (
-    <div className="p-6 bg-white rounded-2xl shadow-lg space-y-6">
+    <div className="p-6 bg-white rounded-2xl space-y-6">
       <h2 className="text-2xl font-semibold text-gray-800">{exercise.name}</h2>
 
       <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -175,7 +175,7 @@ export default function ExercisePage() {
 
       {/* Exercises list */}
       <div className="space-y-12">
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}w
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {activeCategory.data.map((exercise: any) => (
           <ExerciseCard key={exercise.id} exercise={exercise as Exercise} />
         ))}

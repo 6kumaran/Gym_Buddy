@@ -75,7 +75,7 @@ export default function AuthDialog() {
       {!user ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="absolute top-4 mt-3 right-6 bg-blue-500 text-white px-4 py-2 rounded"
+          className="absolute top-4 mt-3 right-6 bg-blue-500 text-white px-4 py-2 rounded-full cursor-pointer"
         >
           Sign In
         </button>
@@ -131,7 +131,7 @@ export default function AuthDialog() {
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 w-[400px] relative shadow-2xl border border-white/30">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-3 text-gray-500 text-lg"
+              className="absolute top-2 right-3 text-black text-lg"
             >
               ✕
             </button>
@@ -143,15 +143,15 @@ export default function AuthDialog() {
             {/* OAuth buttons */}
             <button
               onClick={signInWithGoogle}
-              className="w-full border border-gray-300 py-2 rounded mb-3 flex items-center justify-center gap-2 hover:bg-gray-50"
+              className="w-full border border-gray-500 py-2 rounded-full mb-3 flex items-center justify-center gap-2 hover:bg-gray-200 cursor-pointer"
             >
               <span>🔗</span> Continue with Google
             </button>
 
             <div className="flex items-center my-4">
-              <hr className="flex-1 border-gray-300" />
-              <span className="px-2 text-gray-500 text-sm">or</span>
-              <hr className="flex-1 border-gray-300" />
+              <hr className="flex-1 border-black" />
+              <span className="px-2 text-black text-xl">or</span>
+              <hr className="flex-1 border-black" />
             </div>
 
             {/* Manual form */}
@@ -161,7 +161,7 @@ export default function AuthDialog() {
                 placeholder="Full Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="border w-full p-2 mb-3 rounded text-black"
+                className="border border-gray-500 w-full p-2 mb-3 rounded text-black"
               />
             )}
 
@@ -170,7 +170,7 @@ export default function AuthDialog() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border w-full p-2 mb-3 rounded text-black"
+              className="border border-gray-500 w-full p-2 mb-3 rounded text-black"
             />
 
             <input
@@ -178,7 +178,7 @@ export default function AuthDialog() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border w-full p-2 mb-3 rounded text-black"
+              className="border border-gray-500 w-full p-2 mb-3 rounded text-black"
             />
 
             {isRegister && (
@@ -187,7 +187,7 @@ export default function AuthDialog() {
                   placeholder="Confirm Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="border w-full p-2 mb-3 rounded text-black"
+                  className="border border-gray-500 w-full p-2 mb-3 rounded text-black"
                 />
               )}        
             {message && <p className="text-red-500 mb-3">{message}</p>}
@@ -198,13 +198,13 @@ export default function AuthDialog() {
                   <label className="flex items-center gap-2 text-sm text-black">
                     <input type="checkbox" className="accent-blue-600" /> Remember Me
                   </label>
-                  <button className="text-sm text-blue-600 hover:underline">
+                  <button className="text-sm text-blue-600 hover:underline cursor-pointer">
                     Forgot password?
                   </button>
                 </div>
                 <button
                   onClick={handleLogin}
-                  className="w-full bg-green-600 text-white py-2 rounded mb-3"
+                  className="w-full bg-green-600 text-white py-2 rounded mb-3 cursor-pointer"
                 >
                   Sign In
                 </button>
