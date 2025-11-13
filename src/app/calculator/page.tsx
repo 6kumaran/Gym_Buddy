@@ -15,21 +15,20 @@ export default function CalculatorPage() {
 
   return (
     <div className="min-h-screen p-6">
-      <h1 className="text-3xl font-bold text-white pt-15 mb-6 text-center">
+      <h1 className="text-3xl font-bold text-white pt-20 mb-6 text-center">
         Fitness Calculators
       </h1>
 
       {/* Tabs */}
-      <div className="mb-8 overflow-x-auto">
+      <div className="mb-8 overflow-x-auto text-white">
         <div className="flex space-x-4 min-w-max px-2 sm:justify-center">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-lg shadow-md whitespace-nowrap transition ${
+              className={`px-4 py-2 rounded-full shadow-md whitespace-nowrap transition ${
                 activeTab === tab
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
+                  ? "bg-gradient-to-r from-orange-300 to-pink-500 text-white" : "bg-transparent hover:bg-gradient-to-r from-orange-300 to-pink-500 hover:cursor-pointer"
               }`}
             >
               {tab}
@@ -39,7 +38,10 @@ export default function CalculatorPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-lg mx-auto bg-gray-800 rounded-xl shadow-md p-6 space-y-6">
+      <div className="max-w-lg mx-auto rounded-xl bg-white/10 backdrop-blur-md
+                 border border-white/20
+                 shadow-[0_4px_20px_rgba(0,0,0,0.4)]
+                 text-white p-6 space-y-6">
         {activeTab === "BMI" && <BMICalculator />}
         {activeTab === "Calorie Burn" && <CalorieBurnCalculator />}
         {activeTab === "One-Rep Max" && <OneRepMaxCalculator />}
@@ -73,14 +75,14 @@ function BMICalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
@@ -99,7 +101,7 @@ function BMICalculator() {
         </p>
       )}
       
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         💡 Suggestion: For underweight, include calorie-dense foods like nuts &
         avocados. For overweight, focus on cardio & portion control.
       </p>
@@ -156,19 +158,19 @@ function CalorieBurnCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Duration (minutes)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         />
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
@@ -188,7 +190,7 @@ function CalorieBurnCalculator() {
         </p>
       )}
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         💡 Tip: Choose the activity closest to what you’re doing.  
         Example: Walking (3–4 METs), Running (9–12 METs), Jump rope (12 METs).
       </p>
@@ -219,14 +221,14 @@ function OneRepMaxCalculator() {
         <input
           type="number"
           placeholder="Weight lifted (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Reps performed"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={reps}
           onChange={(e) => setReps(e.target.value)}
         />
@@ -236,7 +238,7 @@ function OneRepMaxCalculator() {
         <p className="mt-4 font-medium text-white">Estimated 1RM: {oneRepMax} kg</p>
       )}
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         💡 Suggestion: Use 60–80% of 1RM for muscle growth, 85–95% for strength.
       </p>
     </div>
@@ -274,12 +276,12 @@ const proteinMax = weight ? (Number(weight) * maxMultiplier).toFixed(1) : null;
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <select
-  className="w-full border p-2 rounded text-white"
+  className="w-full border p-2 rounded-xl text-white"
   value={activity}
   onChange={(e) => setActivity(e.target.value)}
 >
@@ -296,7 +298,7 @@ const proteinMax = weight ? (Number(weight) * maxMultiplier).toFixed(1) : null;
         </p>
       )}
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         🍗 Food sources: Chicken, eggs, lentils, tofu, fish, whey protein.
       </p>
     </div>
@@ -355,27 +357,27 @@ function MacroCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Age (years)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
 
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -384,7 +386,7 @@ function MacroCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
         >
@@ -396,7 +398,7 @@ function MacroCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
         >
@@ -420,7 +422,7 @@ function MacroCalculator() {
         </div>
       )}
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         🥗 Example foods:  
         Protein → Chicken, eggs, beans  
         Carbs → Rice, oats, fruits  
@@ -460,27 +462,27 @@ function CalorieCalculator() {
         <input
           type="number"
           placeholder="Weight (kg)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Height (cm)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
         <input
           type="number"
           placeholder="Age (years)"
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
 
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -489,15 +491,15 @@ function CalorieCalculator() {
         </select>
 
         <select
-          className="w-full border p-2 rounded text-white"
+          className="w-full border p-2 rounded-xl text-white"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
         >
-          <option value="1.2">Sedentary (little/no exercise)</option>
-          <option value="1.375">Lightly active (1-3 days/week)</option>
-          <option value="1.55">Moderately active (3-5 days/week)</option>
-          <option value="1.725">Very active (6-7 days/week)</option>
-          <option value="1.9">Super active (twice daily training)</option>
+          <option className="text-black" value="1.2">Sedentary (little/no exercise)</option>
+          <option className="text-black" value="1.375">Lightly active (1-3 days/week)</option>
+          <option className="text-black" value="1.55">Moderately active (3-5 days/week)</option>
+          <option className="text-black" value="1.725">Very active (6-7 days/week)</option>
+          <option className="text-black" value="1.9">Super active (twice daily training)</option>
         </select>
       </div>
 
@@ -507,7 +509,7 @@ function CalorieCalculator() {
         </p>
       )}
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-gray-300">
         🍽️ Suggestion: To lose weight, eat ~500 kcal less. To gain weight, eat
         ~300–500 kcal more.  
         Food choices: lean protein, complex carbs, veggies.

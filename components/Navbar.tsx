@@ -31,37 +31,37 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6 text-black">
           <Link href="/" onClick={() => setActiveTab("Home")} className={` px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Home"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Home</li></Link>
           <Link href="/exercise" onClick={() => setActiveTab("Exercise")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Exercise"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Exercise</li></Link>
           <Link href="/calculator" onClick={() => setActiveTab("Calculator")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Calculator"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`} ><li>Calculator</li></Link>
           <Link href="/diet" onClick={() => setActiveTab("Diet")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Diet"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Diet</li></Link>
           <Link href="/diet/food-detector" onClick={() => setActiveTab("Macros")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                   activeTab === "Macros"
-                    ? "bg-blue-600 text-white"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                     : "bg-white text-gray-700 hover:bg-gray-200"
                 }`}><li>Macros</li></Link>
           <Link href="/gallery" onClick={() => setActiveTab("Gallery")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Gallery"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Gallery</li></Link>
           <Link href="/community" onClick={() => setActiveTab("Community")} className={`px-2 py-1 rounded-full whitespace-nowrap transition ${
                 activeTab === "Community"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-200"
               }`}><li>Community</li></Link>
         </ul>

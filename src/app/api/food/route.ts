@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const USAGE_PATH = path.join(DATA_DIR, "usage.json");
-const LIMIT = 5;
+const LIMIT = 6;
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -110,3 +110,12 @@ If multiple foods are present, choose the most dominant one.`;
     return NextResponse.json({ success: false, error: String(err) }, { status: 500 });
   }
 }
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "10mb", // increase to handle large phone images
+    },
+  },
+};
+

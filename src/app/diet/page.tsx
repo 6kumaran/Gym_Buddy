@@ -10,20 +10,19 @@ export default function DietPage() {
   return (
     <ProtectedRoute>
       <div className="p-6 space-y-10">
-        <h1 className="text-3xl font-bold text-center pt-15 text-white">Diet Plans</h1>
+        <h1 className="text-3xl font-bold text-center pt-20 text-white">Diet Plans</h1>
 
         {/* Responsive Tabs */}
-        <div className="flex justify-center">
+        <div className="flex justify-center text-white">
           <div className="flex gap-4 overflow-x-auto sm:flex-wrap sm:justify-center scrollbar-hide pb-2">
             {dietCategories.map((cat) => (
               <button
                 key={cat.title}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition 
+                className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition 
                   ${
                     activeCategory.title === cat.title
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 hover:bg-gray-300"
+                      ? "bg-gradient-to-r from-orange-300 to-pink-500 text-white" : "bg-transparent hover:bg-gradient-to-r from-orange-300 to-pink-500 hover:cursor-pointer"
                   }`}
               >
                 {cat.title}

@@ -57,19 +57,19 @@ export default function CommunityPage() {
 
   return ( 
     <ProtectedRoute>
-      <div className="max-w-2xl mx-auto p-4 pt-30">
+      <div className="max-w-2xl mx-auto p-4 space-y-6">
         {/* Post input */}
-        
+        <h1 className="text-3xl font-bold text-white pt-20 text-center">Join the FitLife Community !</h1>
         <div className="flex flex-row gap-3 items-center justify-between">
           <textarea
-            className="w-full border rounded p-2 mb-2 text-white"
+            className="w-full border rounded-3xl p-2 mb-2 text-white"
             placeholder="Share something…"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
           <button
             onClick={submit}
-            className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer"
+            className="px-4 py-2 bg-gradient-to-r from-orange-300 to-pink-500 text-white rounded-full cursor-pointer"
           >
             Post
           </button>
@@ -78,7 +78,7 @@ export default function CommunityPage() {
         {/* Posts */}
         <div className="mt-6 space-y-4">
           {posts.map((p) => (
-            <div key={p.id} className="rounded border p-3 bg-white/70">
+            <div key={p.id} className="rounded-3xl border p-3 bg-white/70">
               {/* Header */}
               <div className="flex items-center gap-2 mb-2">            
 
@@ -109,11 +109,11 @@ export default function CommunityPage() {
                   }}
                   className="cursor-pointer"
                 >
-                  {p.has_liked ? "♥ Unlike" : "♡ Like"} · {p.like_count}
+                  {p.has_liked ? "♥Unlike" : "♡Like"} · {p.like_count}
                 </button>
 
                 <button onClick={() => toggleComments(p.id)} className="cursor-pointer">
-                  💬 Comments: {p.comment_count}
+                  💬Comments: {p.comment_count}
                 </button>
               </div>
 
@@ -138,8 +138,8 @@ export default function CommunityPage() {
                   {/* Add comment */}
                   <div className="flex gap-2 mt-2">
                     <input
-                      className="flex-1 border rounded p-1 text-black"
-                      placeholder="Write a comment..."
+                      className="flex-1 border rounded-xl p-1 text-black"
+                      placeholder=" Write a comment..."
                       value={commentText[p.id] ?? ""}
                       onChange={(e) =>
                         setCommentText((prev) => ({
@@ -150,7 +150,7 @@ export default function CommunityPage() {
                     />
                     <button
                       onClick={() => submitComment(p.id)}
-                      className="px-2 bg-blue-500 text-white rounded cursor-pointer"
+                      className="px-2 bg-gradient-to-r from-orange-300 to-pink-500 text-white rounded-full cursor-pointer"
                     >
                       Send
                     </button>

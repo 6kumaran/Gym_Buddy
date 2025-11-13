@@ -148,14 +148,14 @@ export default function UploadGallery() {
   // ---------------- UI ----------------
   return (
     <ProtectedRoute>
-      <div className="flex flex-col gap-6 p-6">
-        <h1 className="text-2xl font-bold text-white pt-16">Upload to My Gallery</h1>
+      <div className="flex flex-col gap-6 p-6 justify-center items-center">
+        <h1 className="text-2xl font-bold text-white pt-20">Your Fitness Journey</h1>
 
         {/* Upload controls (unchanged) */}
         <div className="flex flex-wrap gap-3">
-          <Button variant="secondary" onClick={() => open(pickRef)}>Pick from device</Button>
-          <Button onClick={() => open(photoRef)}>Take photo (camera)</Button>
-          <Button onClick={() => open(videoRef)}>Record video (camera)</Button>
+          <Button className="bg-white text-black rounded-2xl" onClick={() => open(pickRef)}>Pick from device</Button>
+          <Button className="bg-white text-black rounded-2xl" onClick={() => open(photoRef)}>Take photo (camera)</Button>
+          <Button className="bg-white text-black rounded-2xl" onClick={() => open(videoRef)}>Record video (camera)</Button>
         </div>
 
         {/* Hidden inputs */}
@@ -188,21 +188,22 @@ export default function UploadGallery() {
             Selected: <span className="font-medium">{file.name}</span>
           </p>
         )}
-        <Button onClick={handleUpload} disabled={!file || uploading}>
+        <Button className="bg-gradient-to-r from-orange-300 to-pink-500 rounded-full" onClick={handleUpload} disabled={!file || uploading}>
           {uploading ? "Uploading..." : "Upload"}
         </Button>
 
         {/* Calendar + day picker */}
-        <div className="mt-8">
+        <div className="mt-8 justify-center items-center text-center">
           <h2 className="text-xl text-white font-semibold mb-2">
             View by Date
           </h2>
           <Calendar
+            className="rounded-3xl"
             mode="single"
             selected={selectedDate}
             onSelect={setSelectedDate}
           />
-          <p className="text-sm text-blue-300 mt-2">
+          <p className="text-sm text-white mt-2">
             {selectedDate?.toISOString().split("T")[0]}
           </p>
         </div>

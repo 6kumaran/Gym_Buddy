@@ -68,13 +68,15 @@ import ProtectedRoute from "../../../../components/ProtectedRoute";
 
     return (
       <ProtectedRoute>
-      <main className="min-h-screen p-6 text-white text-center" style={{ padding: 20 }}>
+      <main className="min-h-screen p-6 text-white text-center justify-center items-center" style={{ padding: 20 }}>
         <h1 className="text-2xl font-bold pt-20">Food Detector (Gemini + OpenFoodFacts)</h1>
 
-        <div style={{ marginBottom: 10 }}>
+        <div className="text-lg mb-4">
           <label>
-            Username:{" "}
+            Username : {" "}
             <input
+              type="text"
+              className="text-center border rounded-lg my-4"
               value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -86,7 +88,7 @@ import ProtectedRoute from "../../../../components/ProtectedRoute";
         </div>
 
         <div>
-          <input type="file" accept="image/*" className="px-4 py-2 rounded-xl bg-blue-600" onChange={handleFile} />
+          <input type="file" accept="image/*" className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-300 to-pink-500" onChange={handleFile} />
         </div>
 
         {imageSrc && <img src={imageSrc} alt="preview" className="text-center w-max m-auto py-4 justify-center display-block"/>}
@@ -96,17 +98,20 @@ import ProtectedRoute from "../../../../components/ProtectedRoute";
         {message && <div style={{ marginTop: 12, color: "crimson" }} className="text-center">{message}</div>}
 
         {food && (
-          <div style={{ marginTop: 16, border: "1px solid #ddd" }} className="text-center w-max m-auto p-4 rounded-lg bg-gray-800">
+          <div style={{ marginTop: 16, border: "1px solid #ddd" }} className="text-center w-max m-auto p-4 rounded-lg bg-white/10 backdrop-blur-md
+                 border border-white/20
+                 shadow-[0_4px_20px_rgba(0,0,0,0.4)]
+                 text-white">
             <div><strong>Detected:</strong> {food}</div>
 
-            <div style={{ marginTop: 8 }}>
+            <div className="mt-8 text-center text-lg">
               <label>
                 Serving (g):{" "}
-                <input type="number" value={serving} onChange={(e) => setServing(Number(e.target.value))} min={1} />
+                <input type="number" className="text-center border rounded-xl" value={serving} onChange={(e) => setServing(Number(e.target.value))} min={1} />
               </label>
             </div>
 
-            <div style={{ marginTop: 8 }}>
+            <div className="mt-8 text-center text-lg">
               <strong>Estimated nutrition for {serving} g:</strong>
               {macros ? (
                 <ul>

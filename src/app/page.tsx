@@ -23,7 +23,7 @@ export default function Home() {
         </p>
         <Link
           href="/exercise"
-          className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
+          className="bg-gradient-to-r from-orange-300 to-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
         >
           Browse Exercises
         </Link>
@@ -55,13 +55,13 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center py-16 bg-gray-100">
+      <section className="text-center py-16">
         <h2 className="text-3xl font-bold mb-6">
           Ready to start your fitness journey?
         </h2>
         <Link
           href="/signup"
-          className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-blue-700 transition"
+          className="bg-gradient-to-r from-orange-300 to-pink-500 text-white px-6 py-3 rounded-full font-medium shadow hover:bg-blue-700 transition"
         >
           Join Now
         </Link>

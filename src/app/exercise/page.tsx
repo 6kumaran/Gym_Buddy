@@ -48,7 +48,6 @@ export interface Exercise {
 }
 
 function ExerciseCard({ exercise }: { exercise: Exercise }) {
-  // Resolve media sources from multiple possible shapes
   const videoSrc = exercise.video ?? exercise.media?.video ?? undefined;
 
   const images: string[] = (() => {
@@ -59,57 +58,55 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
     if (exercise.media?.image) return [exercise.media.image];
     return [];
   })();
- 
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  // reset index for new exercise
+  const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => setActiveIndex(0), [exercise.id]);
 
   const equipmentText =
     Array.isArray(exercise.equipment) ? exercise.equipment.join(", ") : exercise.equipment ?? "None";
 
   return (
-    <div className="p-6 bg-white rounded-2xl space-y-6">
-      <h2 className="text-2xl font-semibold text-gray-800">{exercise.name}</h2>
+    <div
+      className="p-6 rounded-2xl space-y-6
+                 bg-white/10 backdrop-blur-md
+                 border border-white/20
+                 shadow-[0_4px_20px_rgba(0,0,0,0.4)]
+                 text-white transition-transform duration-300 hover:scale-[1.02]"
+    >
+      <h2 className="text-2xl font-semibold">{exercise.name}</h2>
 
       <div className="flex flex-col md:flex-row gap-6 items-start">
         {/* LEFT: media (video or images) */}
         <div className="w-full md:w-1/2">
           {videoSrc ? (
-        <video
-      controls
-      className="rounded-lg shadow-md w-full"
-      src={videoSrc}
-    />
-  ) : images.length ? (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-      {images.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt={`${exercise.name} step ${i + 1}`}
-      className="rounded-lg shadow-md w-full object-cover"
-      loading="lazy"
-      decoding="async"
-      onError={(e) =>
-        ((e.currentTarget as HTMLImageElement).src = "/images/placeholder.png")
-      }
-    />
-  ))}
-</div>
-
-  ) : (
-    <div className="rounded-lg bg-gray-100 w-full h-48 flex items-center justify-center text-gray-500">
-      No media available
-    </div>
-  )}
-</div>
-
+            <video controls className="rounded-lg shadow-md w-full" src={videoSrc} />
+          ) : images.length ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${exercise.name} step ${i + 1}`}
+                  className="rounded-lg shadow-md w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) =>
+                    ((e.currentTarget as HTMLImageElement).src = "/images/placeholder.png")
+                  }
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-lg bg-gray-800/40 border border-white/10 w-full h-48 flex items-center justify-center text-gray-300">
+              No media available
+            </div>
+          )}
+        </div>
 
         {/* RIGHT: details */}
         <div className="w-full md:w-1/2">
           <h3 className="text-lg font-medium mb-2">Muscles Focused</h3>
-          <ul className="flex flex-wrap gap-4 text-gray-700">
+          <ul className="flex flex-wrap gap-4 text-gray-200">
             {exercise.muscles.map((mus, i) => (
               <li key={i} className="flex flex-col items-center w-28">
                 {mus.image ? (
@@ -119,10 +116,12 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
                     className="w-24 h-16 object-cover rounded-md shadow-sm"
                     loading="lazy"
                     decoding="async"
-                    onError={(e) => (e.currentTarget as HTMLImageElement).src = "/images/muscle-placeholder.png"}
+                    onError={(e) =>
+                      (e.currentTarget as HTMLImageElement).src = "/images/muscle-placeholder.png"
+                    }
                   />
                 ) : (
-                  <div className="w-24 h-16 bg-gray-100 rounded-md" />
+                  <div className="w-24 h-16 bg-gray-700/40 rounded-md" />
                 )}
                 <span className="mt-1 text-center text-sm">{mus.name}</span>
               </li>
@@ -132,13 +131,13 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
           {exercise.equipment && (
             <div className="mt-4">
               <h3 className="text-lg font-medium mb-1">Equipment Needed</h3>
-              <p className="text-gray-700">{equipmentText}</p>
+              <p className="text-gray-200">{equipmentText}</p>
             </div>
           )}
 
           <div className="mt-4">
             <h3 className="text-lg font-medium mb-2">Steps</h3>
-            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+            <ol className="list-decimal list-inside space-y-2 text-gray-200">
               {exercise.steps.map((s, idx) => (
                 <li key={idx}>{s}</li>
               ))}
@@ -150,22 +149,23 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
   );
 }
 
+
 export default function ExercisePage() {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
     <div className="p-6 space-y-10">
-      <h1 className="text-3xl font-bold text-center">Exercises</h1>
+      <h1 className="text-3xl font-bold text-white pt-20 text-center">Exercises</h1>
 
       {/* Tabs */}
-      <div className="flex justify-center">
+      <div className="flex text-white justify-center">
         <div className="flex gap-4 overflow-x-auto sm:flex-wrap sm:justify-center scrollbar-hide pb-2">
           {categories.map((cat) => (
             <button
               key={cat.key}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition 
-                ${activeCategory.key === cat.key ? "bg-blue-600 text-white" : "bg-gray-200 hover:bg-gray-300"}`}
+              className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition 
+                ${activeCategory.key === cat.key ? "bg-gradient-to-r from-orange-300 to-pink-500 text-white" : "bg-transparent hover:bg-gradient-to-r from-orange-300 to-pink-500 hover:cursor-pointer"}`}
             >
               {cat.title}
             </button>
