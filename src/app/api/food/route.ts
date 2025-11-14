@@ -111,11 +111,4 @@ If multiple foods are present, choose the most dominant one.`;
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: "10mb", // increase to handle large phone images
-    },
-  },
-};
 

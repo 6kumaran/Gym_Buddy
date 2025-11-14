@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "src/app/api/food/route.ts": {
+      "maxDuration": 30,
+      "maxLambdaSize": "15mb",
+      "includeFiles": "data/**"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/food",
+      "dest": "/api/food",
+      "methods": ["POST"],
+      "bodyLimit": "10mb" 
+    }
+  ]
+}
