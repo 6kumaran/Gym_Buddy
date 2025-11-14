@@ -75,7 +75,7 @@ export default function AuthDialog() {
       {!user ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="absolute top-4 mt-3 right-6 bg-blue-500 text-white px-4 py-2 rounded-full cursor-pointer"
+          className="absolute top-4 mt-3 right-6 bg-gradient-to-r from-orange-300 to-pink-500 text-white px-4 py-2 rounded-full cursor-pointer"
         >
           Sign In
         </button>
@@ -198,9 +198,6 @@ export default function AuthDialog() {
                   <label className="flex items-center gap-2 text-sm text-black">
                     <input type="checkbox" className="accent-blue-600" /> Remember Me
                   </label>
-                  <button className="text-sm text-blue-600 hover:underline cursor-pointer">
-                    Forgot password?
-                  </button>
                 </div>
                 <button
                   onClick={handleLogin}

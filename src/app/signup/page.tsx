@@ -73,7 +73,7 @@ export default function AuthDialog() {
         {/* Google Sign-In */}
         <button
           onClick={signInWithGoogle}
-          className="w-full border border-gray-300 py-2 rounded mb-3 flex items-center justify-center gap-2 hover:bg-gray-100 transition"
+          className="w-full border border-gray-300 py-2 rounded-full mb-3 flex items-center justify-center gap-2 bg-gray-100 transition"
         >
           <span>🔗</span> Continue with Google
         </button>
@@ -90,7 +90,7 @@ export default function AuthDialog() {
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border w-full p-2 mb-3 rounded text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
+            className="border w-full p-2 mb-3 rounded-lg text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
           />
         )}
 
@@ -99,7 +99,7 @@ export default function AuthDialog() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border w-full p-2 mb-3 rounded text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
+          className="border w-full p-2 mb-3 rounded-lg text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
         />
 
         <input
@@ -107,7 +107,7 @@ export default function AuthDialog() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border w-full p-2 mb-3 rounded text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
+          className="border w-full p-2 mb-3 rounded-lg text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
         />
 
         {isRegister && (
@@ -116,7 +116,7 @@ export default function AuthDialog() {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="border w-full p-2 mb-3 rounded text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
+            className="border w-full p-2 mb-3 rounded-lg text-black bg-white/60 backdrop-blur-sm placeholder-gray-500"
           />
         )}
 
@@ -128,9 +128,7 @@ export default function AuthDialog() {
               <label className="flex items-center gap-2 text-sm text-black">
                 <input type="checkbox" className="accent-blue-600" /> Remember Me
               </label>
-              <button className="text-sm text-blue-600 hover:underline">
-                Forgot password?
-              </button>
+              
             </div>
             <button
               onClick={handleLogin}
