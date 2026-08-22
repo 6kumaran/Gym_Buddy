@@ -51,8 +51,9 @@ export default function AuthDialog() {
     email,
     password,
     options: {
-      data: { name }, // stores name in user_metadata
-    },
+  data: { name },
+  emailRedirectTo: window.location.origin,
+},
   });
 
   if (error) setMessage(error.message);
@@ -61,8 +62,22 @@ export default function AuthDialog() {
 
 
   async function signInWithGoogle() {
-    await supabase.auth.signInWithOAuth({ provider: "google" });
-  }
+  const redirectUrl = `${window.location.origin}/auth/callback`;
+
+  console.log("OAuth redirect:", redirectUrl);
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: redirectUrl,
+    },
+  });
+
+  console.log("OAuth data:", data);
+  console.log("OAuth error:", error);
+
+}
+
 
   async function handleLogout() {
     await supabase.auth.signOut();
