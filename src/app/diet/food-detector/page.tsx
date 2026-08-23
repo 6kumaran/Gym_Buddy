@@ -13,10 +13,6 @@ import ProtectedRoute from "../../../../components/ProtectedRoute";
     const [macros, setMacros] = useState<Macros>(null);
     const [serving, setServing] = useState<number>(100);
     const [message, setMessage] = useState<string | null>(null);
-    type FoodAnalysis = {
-  confidence: number;
-  serving_basis_g: number;
-  };
   const [confidence, setConfidence] = useState<number | null>(null);
 
     async function compressImage(file: File): Promise<{
@@ -297,7 +293,7 @@ import ProtectedRoute from "../../../../components/ProtectedRoute";
                 className="hidden"
               />
             </label>
-              
+
             {/* Choose Image - all devices */}
             <label className="cursor-pointer px-5 py-2 rounded-full bg-gradient-to-r from-orange-300 to-pink-500 text-white">
               🖼️ Choose Image

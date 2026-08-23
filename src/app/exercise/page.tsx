@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // datasets
 import { pushExercises } from "../../data/exercises/pushExercises";
@@ -59,8 +59,6 @@ function ExerciseCard({ exercise }: { exercise: Exercise }) {
     return [];
   })();
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  useEffect(() => setActiveIndex(0), [exercise.id]);
 
   const equipmentText =
     Array.isArray(exercise.equipment) ? exercise.equipment.join(", ") : exercise.equipment ?? "None";

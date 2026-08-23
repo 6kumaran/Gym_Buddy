@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { supabase } from "../../../lib/supabaseClient";
 import Link from "next/link";
 
@@ -10,24 +10,6 @@ export default function AuthDialog() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    async function getSession() {
-      const { data } = await supabase.auth.getSession();
-      setUser(data.session?.user ?? null);
-    }
-    getSession();
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (_event, session) => setUser(session?.user ?? null)
-    );
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
-  }, []);
 
   async function handleLogin() {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
