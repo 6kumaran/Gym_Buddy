@@ -64,17 +64,12 @@ export default function AuthDialog() {
   async function signInWithGoogle() {
   const redirectUrl = `${window.location.origin}/auth/callback`;
 
-  console.log("OAuth redirect:", redirectUrl);
-
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
       redirectTo: redirectUrl,
     },
   });
-
-  console.log("OAuth data:", data);
-  console.log("OAuth error:", error);
 
 }
 

@@ -5,9 +5,11 @@ import {
   SchemaType,
 } from "@google/generative-ai";
 import { createSupabaseServerClient } from "../../../../lib/supabaseServer";
+import { createSupabaseAdminClient } from "../../../../lib/supabaseAdmin";
 
 export async function POST(request: Request) {
   let usageReserved = false;
+  let userId: string | null = null;
 
   try {
     const supabase = await createSupabaseServerClient();
@@ -30,12 +32,26 @@ export async function POST(request: Request) {
         { status: 401 }
       );
     }
+    userId = user.id;
 
     // ============================================================
     // 2. Read request
     // ============================================================
 
-    const body = await request.json();
+    let body: { imageBase64?: unknown };
+
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid request body.",
+        },
+        { status: 400 }
+      );
+    }
+
     const imageBase64 = body?.imageBase64;
 
     if (!imageBase64) {
@@ -45,6 +61,21 @@ export async function POST(request: Request) {
           error: "Missing imageBase64",
         },
         { status: 400 }
+      );
+    }
+
+    const MAX_BASE64_SIZE = 4 * 1024 * 1024; // 4 MB
+
+    if (
+      typeof imageBase64 !== "string" ||
+      imageBase64.length > MAX_BASE64_SIZE
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Image payload is too large.",
+        },
+        { status: 413 }
       );
     }
 
@@ -234,21 +265,45 @@ Output rules:
     // 7. Call Gemini
     // ============================================================
 
-    const result = await model.generateContent([
-      { text: prompt },
+    let responseText: string;
 
-      {
-        inlineData: {
-          mimeType: "image/jpeg",
-          data: imageBase64,
+    try {
+      const result = await model.generateContent([
+        { text: prompt },
+        {
+          inlineData: {
+            mimeType: "image/jpeg",
+            data: imageBase64,
+          },
         },
-      },
-    ]);
+      ]);
+    
+      responseText = result.response.text().trim();
+    } catch (geminiError) {
+      console.error("Gemini food analysis failed:", geminiError);
+    
+      const adminSupabase = createSupabaseAdminClient();
 
-    const responseText = result.response.text().trim();
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
+      usageReserved = false;
+    
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Food analysis service is temporarily unavailable.",
+        },
+        { status: 502 }
+      );
+    }
 
     if (!responseText) {
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json({
@@ -281,11 +336,14 @@ Output rules:
     } catch (parseError) {
       console.error(
         "Gemini returned invalid JSON:",
-        responseText,
         parseError
       );
 
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json(
@@ -307,7 +365,11 @@ Output rules:
   !analysis.food.trim() ||
   !analysis.nutrition
 ) {
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json(
@@ -346,7 +408,11 @@ Output rules:
       !Number.isFinite(carbohydrates) ||
       !Number.isFinite(fat)
     ) {
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json(
@@ -363,7 +429,11 @@ Output rules:
     // ============================================================
 
     if (servingBasis !== 100) {
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json(
@@ -385,7 +455,11 @@ Output rules:
       carbohydrates < 0 ||
       fat < 0
     ) {
-      await supabase.rpc("release_food_analysis");
+      const adminSupabase = createSupabaseAdminClient();
+
+await adminSupabase.rpc("release_food_analysis", {
+  p_user_id: userId,
+});
       usageReserved = false;
 
       return NextResponse.json(
@@ -434,11 +508,14 @@ Output rules:
     // 13. Release reserved quota if request failed
     // ============================================================
 
-    if (usageReserved) {
-      try {
-        const supabase = await createSupabaseServerClient();
+    if (usageReserved && userId) {
+  try {
 
-        await supabase.rpc("release_food_analysis");
+    const adminSupabase = createSupabaseAdminClient();
+
+    await adminSupabase.rpc("release_food_analysis", {
+      p_user_id: userId,
+    });
       } catch (releaseError) {
         console.error(
           "Failed to release food analysis usage:",

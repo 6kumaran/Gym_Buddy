@@ -7,14 +7,6 @@ export async function GET(request: Request) {
   const code = url.searchParams.get("code");
   const origin = url.origin;
 
-  console.log("CALLBACK ORIGIN:", origin);
-console.log("CALLBACK FULL URL:", request.url);
-
-  console.log("========== AUTH CALLBACK ==========");
-  console.log("Callback URL:", request.url);
-  console.log("Callback origin:", origin);
-  console.log("OAuth code exists:", !!code);
-
   if (code) {
     const supabase = await createSupabaseServerClient();
 
